@@ -1,0 +1,75 @@
+<div class="container">
+    <h1>Reports</h1>
+    <div class="reports" nz-row nzGutter="20">
+        <div class="report-cards" nz-col nzXl="18" 
+        nz-flex nzJustify="space-between" nzWrap="wrap" nzGap="large">
+            <app-report-card
+            cardTitle="Total Gross Revenue"
+            cardValue="$2402.23"
+            ></app-report-card>
+    
+            <app-report-card
+            cardTitle="Reservations this month"
+            cardValue="40"
+            ></app-report-card>
+
+            <app-report-card
+            cardTitle="Customers this month"
+            cardValue="467"
+            ></app-report-card>
+
+            <app-report-card
+            cardTitle="Completed reservations"
+            cardValue="272"
+            ></app-report-card>
+
+            <app-report-card
+            cardTitle="Cancelled reservations"
+            cardValue="20"
+            ></app-report-card>
+
+            <app-report-card
+            cardTitle="Average reservation duration (minutes)"
+            cardValue="27"
+            ></app-report-card>
+        </div>
+        <div class="rating-card" nz-col nzXl="5">
+            <div class="rating-heading" nz-flex [nzVertical]="true" nzAlign="center">
+                <h1>4.4</h1>
+                <p>Based on 98 ratings</p>
+                <div class="rating-bars">
+                    <div class="rating-bar">
+                        <p style="width: 70px; font-weight: bold;">5 stars</p>
+                        <div class="progress-bar"><nz-progress
+                            [nzFormat]="valueToNumber"
+                            [nzWidth]="80" [nzPercent]="75" nzType="line"></nz-progress></div>
+                    </div>
+                    <div class="rating-bar">
+                        <p style="width: 70px; font-weight: bold;">4 stars</p>
+                        <div class="progress-bar"><nz-progress
+                            [nzFormat]="valueToNumber"
+                            [nzWidth]="80" [nzPercent]="64" nzType="line"></nz-progress></div>
+                    </div>
+                    <div class="rating-bar">
+                        <p style="width: 70px; font-weight: bold;">3 stars</p>
+                        <div class="progress-bar"><nz-progress
+                            [nzFormat]="valueToNumber"
+                            [nzWidth]="80" [nzPercent]="20" nzType="line"></nz-progress></div>
+                    </div>
+                    <div class="rating-bar">
+                        <p style="width: 70px; font-weight: bold;">2 stars</p>
+                        <div class="progress-bar"><nz-progress
+                            [nzFormat]="valueToNumber"
+                            [nzWidth]="80" [nzPercent]="24" nzType="line"></nz-progress></div>
+                    </div>
+                    <div class="rating-bar">
+                        <p style="width: 70px; font-weight: bold;">1 stars</p>
+                        <div class="progress-bar"><nz-progress
+                            [nzFormat]="valueToNumber"
+                            [nzWidth]="80" [nzPercent]="16" nzType="line"></nz-progress></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

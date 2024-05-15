@@ -1,0 +1,28 @@
+.rating-card{
+    width: 300px;
+    height: 250px;
+    background-color: white;
+    padding: 10px;
+}
+
+.rating-heading h1{
+    margin: 0;
+    font-weight: bold;
+}
+
+.rating-heading p{
+    margin: 0;
+}
+.rating-bars{
+    width: 100%;
+}
+
+.rating-bar{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.progress-bar{
+    width: 100%;
+}

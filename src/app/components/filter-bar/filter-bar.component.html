@@ -1,0 +1,19 @@
+<div class="filters-bar" nz-flex nzAlign="center">
+    <h3>Apply Filters:</h3>
+    <div class="filter-input-container">
+        <nz-date-picker class="filter-input" nzMode="date" nzPlaceHolder="Date"></nz-date-picker>
+    </div>
+    <div class="filter-input-container">
+        <nz-time-picker class="filter-input" nzPlaceHolder="Time" [(ngModel)]="filterTime"></nz-time-picker>
+    </div>
+    <div class="filter-input-container">
+        <nz-select class="filter-input-restaurant" nzShowSearch nzAllowClear nzPlaceHolder="Restaurant Name" [(ngModel)]="filterRestaurant" nzBorderless>
+            <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+            <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+            <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+          </nz-select>
+    </div>
+    <div class="filter-btn">
+        <button nz-button nzType="primary">Filter</button>
+    </div>
+</div>

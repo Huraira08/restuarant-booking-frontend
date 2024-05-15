@@ -1,0 +1,30 @@
+<div class="auth-form-page" nz-flex [nzVertical]="true" nzJustify="center" nzAlign="center">
+    <div class="auth-form-container" nz-flex nzJustify="center" nzAlign="center">
+        <form nz-form [formGroup]="loginForm" class="login-form" (ngSubmit)="submitForm()" nz-flex [nzVertical]="true">
+            <h1>Login</h1>
+            <h2>to get started</h2>
+            <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Please input your email!">
+                <nz-input-group nzPrefixIcon="mail">
+                  <input type="text" nz-input formControlName="email" placeholder="Email" />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="Please input your Password!">
+                <nz-input-group nzPrefixIcon="lock">
+                  <input type="password" nz-input formControlName="password" placeholder="Password" />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <div nz-flex>
+              <nz-spin *ngIf="loggingIn" style="margin-right: 10px;" nzSimple></nz-spin>
+              <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">
+                Log in
+              </button>
+            </div>
+            <div>Or <a href="/register">register now!</a></div>
+          </form>
+    </div>
+</div>

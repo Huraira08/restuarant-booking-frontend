@@ -1,0 +1,32 @@
+<div class="container">
+    <app-filter-bar></app-filter-bar>
+    <nz-table #basicTable >
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Time</th>
+            <th>Date</th>
+            <th>People</th>
+            <th>Table Size</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let report of reports">
+            <td>{{ report.name }}</td>
+            <td>{{ report.mobile }}</td>
+            <td>{{ report.time }}</td>
+            <td>{{ report.date }}</td>
+            <td>{{ report.noOfPeople }}</td>
+            <td>{{ report.tableSize }}</td>
+            <td>{{ report.status }}</td>
+            <td>
+              <img src="../../../assets/icons/delete-can-icon.png" alt="">
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+</div>
