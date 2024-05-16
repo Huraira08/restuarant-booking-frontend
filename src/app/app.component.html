@@ -1,13 +1,11 @@
-<nz-layout>
+<nz-layout class="main-container">
     <nz-sider nzCollapsible nzWidth="200px" *ngIf="showSideBar"
      nzCollapsed="true" 
      [nzTrigger]="null"
      [nzWidth]="80"
      >
-      <!-- <div class="logo"></div> -->
       <ul nz-menu nzTheme="light" nzMode="vertical" [nzInlineIndent]="20">
         <li nz-menu-item [nzSelected]="router.url == '/bookings'" routerLink="/bookings">
-            <!-- <img class="sidebar-icon" src="../assets/icons/bookings-icon.png" alt=""> -->
             <span class="sidebar-icon" nz-icon nzType="book" nzTheme="outline"></span>
         </li>
         <li nz-menu-item [nzSelected]="router.url == '/reports'" routerLink="/reports">
@@ -19,31 +17,27 @@
         <li nz-menu-item [nzSelected]="router.url == '/settings'">
             <img class="sidebar-icon" src="../assets/icons/settings-icon.png" alt="">
         </li>
-        
-        <!-- <li nz-submenu nzTitle="User" nzIcon="user">
-          <ul>
-            <li nz-menu-item>Tom</li>
-            <li nz-menu-item>Bill</li>
-            <li nz-menu-item>Alex</li>
-          </ul>
-        </li>
-        <li nz-submenu nzTitle="Team" nzIcon="team">
-          <ul>
-            <li nz-menu-item>Team 1</li>
-            <li nz-menu-item>Team 2</li>
-          </ul>
-        </li>
-        <li nz-menu-item>
-          <span nz-icon nzType="file"></span>
-          <span>File</span>
-        </li> -->
       </ul>
     </nz-sider>
     <nz-layout>
-      <nz-header *ngIf="showSideBar">Foody<span style="font-weight: bold;">Corner</span></nz-header>
+      <nz-header *ngIf="showHeader" nz-flex nzJustify="space-between">
+       <div>Foody<span style="font-weight: bold;">Corner</span></div>
+        <a nz-button nzType="primary" nz-dropdown [nzDropdownMenu]="menu"
+         style="background-color: var(--primary-color); border:none;">
+          User
+          <span nz-icon nzType="down"></span>
+        </a>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+          <ul nz-menu nzSelectable>
+            <button nz-button nzType="link" (click)="navToProfile()" class="unselected"
+            style="color: var(--primary-color);">My Profile</button>
+            <li nz-menu-item><a (click)="logout()" style="color: var(--primary-color);">Logout</a></li>
+          </ul>
+        </nz-dropdown-menu>
+      </nz-header>
       <nz-content>
         <router-outlet (activate)="toggleSideBar($event)"></router-outlet>
       </nz-content>
-      <nz-footer *ngIf="showSideBar">FoodyCorner.com | All rights reserved</nz-footer>
+      <!-- <nz-footer *ngIf="showSideBar">FoodyCorner.com | All rights reserved</nz-footer> -->
     </nz-layout>
   </nz-layout>

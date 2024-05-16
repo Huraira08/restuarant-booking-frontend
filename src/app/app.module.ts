@@ -34,6 +34,9 @@ import { FilterBarComponent } from './components/filter-bar/filter-bar.component
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { AnalyticsPageComponent } from './pages/analytics-page/analytics-page.component';
+import { BookRestaurantPageComponent } from './pages/book-restaurant-page/book-restaurant-page.component';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 
 
 registerLocaleData(en);
@@ -48,6 +51,8 @@ registerLocaleData(en);
     FilterBarComponent,
     ReportCardComponent,
     AnalyticsPageComponent,
+    BookRestaurantPageComponent,
+    ProfilePageComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,7 +73,8 @@ registerLocaleData(en);
     NzDatePickerModule,
     NzTimePickerModule,
     NzTableModule,
-    NzProgressModule
+    NzProgressModule,
+    NzDropDownModule
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

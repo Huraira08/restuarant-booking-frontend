@@ -18,6 +18,15 @@
                 </nz-input-group>
               </nz-form-control>
             </nz-form-item>
+            <nz-form-item>
+              <!-- <nz-form-label [nzSpan]="4" nzFor="role">Role</nz-form-label> -->
+              <nz-form-control [nzSpan]="8" nzErrorTip="Please select a role!">
+                <nz-select formControlName="role" nzPlaceHolder="Role">
+                  <nz-option nzLabel="User" nzValue="User"></nz-option>
+                  <nz-option nzLabel="Admin" nzValue="Admin"></nz-option>
+                </nz-select>
+              </nz-form-control>
+            </nz-form-item>
             <div nz-flex>
               <nz-spin *ngIf="loggingIn" style="margin-right: 10px;" nzSimple></nz-spin>
               <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">

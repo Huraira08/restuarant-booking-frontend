@@ -1,0 +1,12 @@
+.container{
+    padding: 0 16px;
+}
+.line-chart{
+    height: 350px;
+    width: 600px;
+}
+
+.pie-chart{
+    height: 350px;
+    width: 600px;
+}

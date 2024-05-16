@@ -5,14 +5,22 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 import { ReportsPageComponent } from './pages/reports-page/reports-page.component';
 import { BookingsPageComponent } from './pages/bookings-page/bookings-page.component';
 import { AnalyticsPageComponent } from './pages/analytics-page/analytics-page.component';
+import { BookRestaurantPageComponent } from './pages/book-restaurant-page/book-restaurant-page.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 
 const routes: Routes = [
   {path:"", redirectTo: "/login", pathMatch: "full"},
   {path: "login", component: LoginPageComponent},
   {path: "register", component: RegisterPageComponent},
+
+  // admin pages
   {path: "reports", component: ReportsPageComponent},
   {path: "bookings", component: BookingsPageComponent},
-  {path: "analytics", component: AnalyticsPageComponent}
+  {path: "analytics", component: AnalyticsPageComponent},
+
+  // user pages
+  {path: "book-restaurant", component: BookRestaurantPageComponent},
+  {path: "profile", component: ProfilePageComponent}
 ];
 
 @NgModule({

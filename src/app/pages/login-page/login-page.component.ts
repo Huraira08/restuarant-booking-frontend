@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth/auth.service';
+
+// enum Role{
+//   Admin = 'Admin',
+//   User = 'User'
+// }
 
 @Component({
   selector: 'app-login-page',
@@ -9,6 +15,7 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent {
   loginForm!: FormGroup
+  roles = ['User', 'Admin']
   errorMessage = ''
 
   loggingIn: boolean = false
@@ -16,19 +23,29 @@ export class LoginPageComponent {
   constructor(
     private formBuilder: FormBuilder,
     // private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ){
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      role: ['', Validators.required]
     })
   }
 
+  get role(){
+    return this.loginForm.controls['role'].value;
+  }
   async submitForm(){
-    this.router.navigate(['/reports']);
+    this.authService.setRole(this.role)
+    if(this.role === "Admin"){
+      this.router.navigate(['/reports']);
+    }else{
+      this.router.navigate(['/book-restaurant'])
+    }
+
     // Disable the validation for now
     // if(this.loginForm.valid){
-      
     // }else{
     //   Object.values(this.loginForm.controls).forEach(control => {
     //     if(control.invalid){
@@ -37,5 +54,12 @@ export class LoginPageComponent {
     //     }
     //   })
     // }
+    
+  }
+
+  roleChange(role: string){
+    this.loginForm.controls['role'].setValue(role);
+    this.loginForm.controls['role'].markAsDirty();
+    this.loginForm.controls['role'].updateValueAndValidity({onlySelf: true});
   }
 }

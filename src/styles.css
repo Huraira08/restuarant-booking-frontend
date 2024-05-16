@@ -5,3 +5,7 @@
     --tertiary-color: #5E5E5E;
     --sub-color: #CECECE;
 }
+
+*{
+    padding: 0;
+}
