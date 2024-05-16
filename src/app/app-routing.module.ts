@@ -7,6 +7,8 @@ import { BookingsPageComponent } from './pages/bookings-page/bookings-page.compo
 import { AnalyticsPageComponent } from './pages/analytics-page/analytics-page.component';
 import { BookRestaurantPageComponent } from './pages/book-restaurant-page/book-restaurant-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { BookingsCalendarPageComponent } from './pages/bookings-calendar-page/bookings-calendar-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 const routes: Routes = [
   {path:"", redirectTo: "/login", pathMatch: "full"},
@@ -17,8 +19,10 @@ const routes: Routes = [
   {path: "reports", component: ReportsPageComponent},
   {path: "bookings", component: BookingsPageComponent},
   {path: "analytics", component: AnalyticsPageComponent},
+  {path: "bookings-calendar", component: BookingsCalendarPageComponent},
 
   // user pages
+  {path: "home", component: HomePageComponent},
   {path: "book-restaurant", component: BookRestaurantPageComponent},
   {path: "profile", component: ProfilePageComponent}
 ];

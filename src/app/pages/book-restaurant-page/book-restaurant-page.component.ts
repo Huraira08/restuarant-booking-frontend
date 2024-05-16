@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-restaurant-page',
@@ -12,7 +13,9 @@ export class BookRestaurantPageComponent {
   pastDateErrorMessage = ''
   wrongTimeErrorMessage = '';
 
-  constructor(private formBuilder: FormBuilder){
+  constructor(private formBuilder: FormBuilder,
+    private router: Router
+  ){
     this.reservationForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
@@ -35,7 +38,7 @@ export class BookRestaurantPageComponent {
       && !this.pastDateErrorMessage
       && !this.wrongTimeErrorMessage
     ){
-      console.log(this.reservationForm.value)
+      this.router.navigate(['/home'])
     }else{
       Object.values(this.reservationForm.controls).forEach(control => {
         if(control.invalid){

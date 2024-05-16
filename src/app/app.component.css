@@ -46,6 +46,12 @@
     font-size: 24px; 
     color: var(--primary-color);
   }
+
+  .sidebar-text{
+    font-size: 15px;
+    color: var(--primary-color);
+    font-weight: bold;
+  }
   
   .container{
     margin: 20px;

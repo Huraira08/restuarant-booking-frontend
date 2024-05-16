@@ -1,0 +1,33 @@
+.background-img{
+    /* fit image to screen */
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    overflow: hidden;
+}
+
+.foreground-content{
+    position: absolute;
+    top: 35%;
+    left: 90px;
+    max-width: 707px;
+}
+
+.slogan{
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.book-btn{
+    width: 300px;
+    height: 70px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}

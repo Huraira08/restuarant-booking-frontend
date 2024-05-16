@@ -1,21 +1,23 @@
 <nz-layout class="main-container">
     <nz-sider nzCollapsible nzWidth="200px" *ngIf="showSideBar"
-     nzCollapsed="true" 
-     [nzTrigger]="null"
-     [nzWidth]="80"
+     [nzWidth]="160"
      >
-      <ul nz-menu nzTheme="light" nzMode="vertical" [nzInlineIndent]="20">
+      <ul nz-menu nzTheme="light" nzMode="inline" [nzInlineIndent]="20">
         <li nz-menu-item [nzSelected]="router.url == '/bookings'" routerLink="/bookings">
             <span class="sidebar-icon" nz-icon nzType="book" nzTheme="outline"></span>
+            <span class="sidebar-text">Bookings</span>
         </li>
         <li nz-menu-item [nzSelected]="router.url == '/reports'" routerLink="/reports">
           <span class="sidebar-icon" nz-icon nzType="file-text" nzTheme="outline"></span>
+          <span class="sidebar-text">Reports</span>
         </li>
         <li nz-menu-item [nzSelected]="router.url == '/analytics'" routerLink="/analytics">
           <span class="sidebar-icon" nz-icon nzType="line-chart" nzTheme="outline"></span>
+          <span class="sidebar-text">Analytics</span>
         </li>
-        <li nz-menu-item [nzSelected]="router.url == '/settings'">
-            <img class="sidebar-icon" src="../assets/icons/settings-icon.png" alt="">
+        <li nz-menu-item [nzSelected]="router.url == '/bookings-calendar'" routerLink="/bookings-calendar">
+            <span class="sidebar-icon" nz-icon nzType="calendar" nzTheme="outline"></span>
+            <span class="sidebar-text">Calendar</span>
         </li>
       </ul>
     </nz-sider>

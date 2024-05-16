@@ -41,7 +41,7 @@ export class LoginPageComponent {
     if(this.role === "Admin"){
       this.router.navigate(['/reports']);
     }else{
-      this.router.navigate(['/book-restaurant'])
+      this.router.navigate(['/home'])
     }
 
     // Disable the validation for now

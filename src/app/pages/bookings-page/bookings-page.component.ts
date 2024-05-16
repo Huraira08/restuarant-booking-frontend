@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Report } from '../../models/report';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { CalendarViewComponent } from '../../components/calendar-view/calendar-view.component';
 
 @Component({
   selector: 'app-bookings-page',
@@ -64,4 +66,15 @@ export class BookingsPageComponent {
       status: "pending"
     }
   ];
+
+  constructor(private modalService: NzModalService){}
+  viewInCalendar(report: Report) {
+    this.modalService.create({
+      nzTitle: "Calendar View",
+      nzContent: CalendarViewComponent,
+      nzData:{
+        bookDate: report.date
+      }
+    })
+  }
 }

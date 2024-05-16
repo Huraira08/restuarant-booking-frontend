@@ -1,0 +1,15 @@
+<ng-template #customDateCell let-date>
+    <div [ngClass]="{'custom-highlight': isSameDate(date)}">
+      {{ date.getDate() }}
+    </div>
+</ng-template>
+<div [ngStyle]="{ width: '300px', border: '1px solid #d9d9d9', borderRadius: '4px' }">
+    <nz-calendar 
+    [nzFullscreen]="false" 
+    [nzDateFullCell]="customDateCell"
+    [nzValue]="modalData.bookDate"
+    [(ngModel)]="modalData.bookDate"
+    (ngModelChange)="changeDate($event)"
+    >
+    </nz-calendar>
+</div>
