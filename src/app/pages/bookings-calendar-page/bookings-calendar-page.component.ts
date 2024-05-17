@@ -13,7 +13,7 @@ showBookingsModal(date: Date) {
   console.log(date)
   this.modalService.create({
     nzTitle: "Bookings on current date",
-    nzContent: "Show current bookings here"
+    nzContent: "Show current date's bookings here"
   })
 }
 
