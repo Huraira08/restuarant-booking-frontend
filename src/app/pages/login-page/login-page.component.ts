@@ -40,7 +40,7 @@ export class LoginPageComponent {
     this.authService.setRole(this.role)
     if(this.role === "Admin"){
       this.router.navigate(['/reports']);
-    }else{
+    }else if(this.role === "User"){
       this.router.navigate(['/home'])
     }
 
